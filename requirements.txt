@@ -1,5 +1,4 @@
-opencv-python
-streamlit==1.17.0
-pandas==1.4.4
+streamlit==1.13.0
+pandas==1.4.2
 numpy==1.21.5
 scikit-learn
