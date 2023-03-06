@@ -7,12 +7,15 @@ Created on Wed Mar  1 18:41:17 2023
 
 import numpy as np 
 import pickle 
+import pandas as pd 
+from PIL import Image
 import streamlit as st 
 
  # Loading the saved model 
-loaded_model = pickle.load(open("https://github.com/Ajay3736pandey/Churn-Prediction/blob/main/trained_model.sav",'rb'))
+loaded_model = pickle.load(open("https://github.com/Ajay3736pandey/Churn-Prediction/blob/main/trained_model.pkl",'rb'))
 
-
+def welcome():
+    return "Welcome All"
 # creating the function for prediction 
 def Churn_prediction (input_data):
     
@@ -35,7 +38,11 @@ def main():
     
     # Title 
     st.title('Churn Prediction Web App')
-    
+    html_temp = """
+    <div style="background-color:tomato;padding:10px">
+    <h2 style="color:white;text-align:center;">Streamlit Churn Prediction ML App </h2>
+    </div>
+    """
     
     # Getting input from user 
     
