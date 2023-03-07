@@ -19,7 +19,7 @@ classifier=pickle.load(pickle_in)
 def welcome():
     return "Welcome All"
 
-def Churn_prediction(voice_plan_yes, voice_messages, intl_plan_yes, intl_mins, intl_calls, intl_charge, day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge, night_mins, night_calls, night_charge, customer_calls):
+def Churn_prediction(voice_plan, voice_messages, intl_plan, intl_mins, intl_calls, intl_charge, day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge, night_mins, night_calls, night_charge, customer_calls):
     
     prediction=loaded_model.predict([[voice_plan, voice_messages, intl_plan, intl_mins, intl_calls, intl_charge, day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge, night_mins, night_calls, night_charge, customer_calls]])
     print(prediction)
@@ -63,7 +63,7 @@ def main():
     
     #creating button for prediction
     if st.button('Churn Result'):
-        Churn = Churn_prediction(voice_plan_yes, voice_messages, intl_plan_yes, intl_mins, intl_calls, intl_charge, day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge, night_mins, night_calls, night_charge, customer_calls)
+        Churn = Churn_prediction(voice_plan, voice_messages, intl_plan, intl_mins, intl_calls, intl_charge, day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge, night_mins, night_calls, night_charge, customer_calls)
     
     
     st.success(Churn)
