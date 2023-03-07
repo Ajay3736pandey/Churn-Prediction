@@ -14,7 +14,7 @@ import streamlit as st
 from PIL import Image
 
 pickle_in = open("trained_model.pkl","rb")
-classifier=pickle.load(pickle_in)
+loaded_model=pickle.load(pickle_in)
 
 def welcome():
     return "Welcome All"
